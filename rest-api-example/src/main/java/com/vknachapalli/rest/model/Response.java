@@ -3,30 +3,20 @@ package com.vknachapalli.rest.model;
 import java.util.List;
 
 public class Response {
-    private String output;
-    private List<Message> messages;
+    private List<Customer> customers;
 
-    public String getOutput() {
-        return output;
+    public List<Customer> getCustomers() {
+        return customers;
     }
 
-    public void setOutput(String output) {
-        this.output = output;
-    }
-
-    public List<Message> getMessages() {
-        return messages;
-    }
-
-    public void setMessages(List<Message> messages) {
-        this.messages = messages;
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
     }
 
     @Override
     public String toString() {
         return "Response{" +
-                "output='" + output + '\'' +
-                ", messages=" + messages +
+                "customers=" + customers +
                 '}';
     }
 }
