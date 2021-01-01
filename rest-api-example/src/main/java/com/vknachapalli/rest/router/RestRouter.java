@@ -2,7 +2,6 @@ package com.vknachapalli.rest.router;
 
 import com.vknachapalli.rest.model.Customer;
 import com.vknachapalli.rest.model.Request;
-import com.vknachapalli.rest.model.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
@@ -10,11 +9,6 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.rest.RestBindingMode;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
-
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 @Slf4j
 @Component
@@ -56,23 +50,3 @@ public class RestRouter extends RouteBuilder {
                 .endRest();
     }
 }
-
-/*
-* .process(new Processor() {
-                    @Override
-                    public void process(Exchange exchange) throws Exception {
-                        List<Customer> customerList = new ArrayList<>();
-                        List<Map<String, String>> dataTable = (ArrayList<Map<String, String>>) exchange.getMessage().getBody();
-                        dataTable.forEach(item -> {
-                            Customer customer = new Customer();
-                            customer.setId(Long.valueOf(item.get("id")));
-                            customer.setName(item.get("name"));
-                            customer.setCreatedDateTime(Instant.parse(item.get("created_timestamp")));
-                            customerList.add(customer);
-                        });
-                        Response response = new Response();
-                        response.setCustomers(customerList);
-                        exchange.getMessage().setBody(response);
-                    }
-                })
-* */
