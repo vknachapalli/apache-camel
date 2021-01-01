@@ -1,13 +1,22 @@
 package com.vknachapalli.rest.model;
 
-public class Request {
-    private Customer customer;
+import java.util.List;
 
-    public Customer getCustomer() {
-        return customer;
+public class Request {
+    private List<Customer> customers;
+
+    public List<Customer> getCustomers() {
+        return customers;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
+    }
+
+    @Override
+    public String toString() {
+        return "Request{" +
+                "customers=" + customers +
+                '}';
     }
 }
