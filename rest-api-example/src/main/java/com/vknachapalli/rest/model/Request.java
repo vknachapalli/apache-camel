@@ -1,33 +1,13 @@
 package com.vknachapalli.rest.model;
 
-import java.util.List;
-
 public class Request {
+    private Customer customer;
 
-    private String input;
-    private List<Message> messages;
-
-    public String getInput() {
-        return input;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setInput(String input) {
-        this.input = input;
-    }
-
-    public List<Message> getMessages() {
-        return messages;
-    }
-
-    public void setMessages(List<Message> messages) {
-        this.messages = messages;
-    }
-
-    @Override
-    public String toString() {
-        return "Request{" +
-                "input='" + input + '\'' +
-                ", messages=" + messages +
-                '}';
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }
