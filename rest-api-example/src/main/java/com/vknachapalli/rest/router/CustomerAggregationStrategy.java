@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 
 public class CustomerAggregationStrategy implements AggregationStrategy {
     @Override
-    public Exchange aggregate(Exchange oldExchange, Exchange newExchange) {
+    public synchronized Exchange aggregate(Exchange oldExchange, Exchange newExchange) {
         if (oldExchange == null) {
             return newExchange;
         }

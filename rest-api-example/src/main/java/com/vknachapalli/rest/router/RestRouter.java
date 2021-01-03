@@ -36,7 +36,7 @@ public class RestRouter extends RouteBuilder {
                 .type(Request.class)
                 .route()
                 .log("Expect Body, Original Body: ${body}")
-                .split().simple("${body.customers}").aggregationStrategy(new CustomerAggregationStrategy())
+                .split().simple("${body.customers}").aggregationStrategy(new CustomerAggregationStrategy()).parallelProcessing(true)
                 .log("Expect Body, Body in parts : ${body}")
                 .process(new Processor() {
                     @Override
